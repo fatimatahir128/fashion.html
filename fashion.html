@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIBAS - Premium Fashion</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#F7EDE3] text-[#2B1B12]">
+<div class="bg-[#2B1B12] text-[#C9A27E] text-center text-[12px] tracking-[2px] py-2">FREE SHIPPING ON ORDERS ABOVE RS 10,000</div>
+
+
+<div class="flex justify-between items-center px-5 md:px-12 py-4 bg-[#FFF8F0] sticky top-0 z-20 border-b-2 border-[#C9A27E]">
+  <div class="text-[28px] tracking-[5px] font-serif cursor-pointer" onclick="showPage('home')">LIBAS<span class="text-[#C9A27E]">.</span></div>
+  <div class="hidden md:flex gap-4 text-[12px] font-medium">
+    <button onclick="showPage('home')" class="hover:text-[#C9A27E]">HOME</button>
+    <button onclick="showPage('shop')" class="hover:text-[#C9A27E]">SHOP</button>
+    <button onclick="showPage('men')" class="hover:text-[#C9A27E]">MEN</button>
+    <button onclick="showPage('women')" class="hover:text-[#C9A27E]">WOMEN</button>
+    <button onclick="showPage('new-arrivals')" class="hover:text-[#C9A27E]">NEW ARRIVALS</button>
+    <button onclick="showPage('about')" class="hover:text-[#C9A27E]">ABOUT</button>
+    <button onclick="showPage('collections')" class="hover:text-[#C9A27E]">COLLECTIONS</button>
+    <button onclick="showPage('contact')" class="hover:text-[#C9A27E]">CONTACT</button>
+  </div>
+  <div class="flex gap-4 text-[20px]">
+    <button onclick="showPage('wishlist')">♡ (<span id="wishCount">0</span>)</button>
+    <button onclick="showPage('cart')">🛒 (<span id="cartCount">0</span>)</button>
+  </div>
+</div>
+
+<!-- 1. HOME -->
+<section id="home">
+  <div class="flex flex-col md:flex-row bg-[#2B1B12] text-white">
+    <div class="md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
+      <p class="text-[12px] tracking-[3px] text-[#C9A27E]">SUMMER DROP 2026</p>
+      <h1 class="text-[38px] md:text-[52px] leading-[1.1] font-serif mt-3">FRESH LOOKS,<br><span class="text-[#C9A27E]">FREE SHIPPING</span></h1>
+      <p class="text-[14px] text-gray-300 mt-4">Premium lawn, soft aur light. Abhi shop karo.</p>
+      <button onclick="showPage('shop')" class="mt-6 bg-[#C9A27E] text-black w-[180px] py-3 text-[14px] hover:bg-white transition">SHOP NOW</button>
+    </div>
+    <div class="md:w-1/2 overflow-hidden group"><img src="page.jpeg" class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-105 transition duration-500"></div>
+  </div>
+
+  <!-- SHOP BY COLLECTION - MEN / WOMEN / NEW -->
+  <div class="px-5 md:px-12 py-8 bg-[#FFF8F0]">
+    <h2 class="text-center text-[20px] tracking-[3px] font-serif">SHOP BY COLLECTION</h2>
+    <div class="grid grid-cols-3 gap-3 md:gap-6 mt-5">
+      <div onclick="showPage('men')" class="cursor-pointer group overflow-hidden border hover:shadow-xl transition"><img src="men.jpeg" class="w-full h-[160px] md:h-[220px] object-cover group-hover:scale-110 transition"><p class="text-center py-3 font-serif bg-white">MEN →</p></div>
+      <div onclick="showPage('women')" class="cursor-pointer group overflow-hidden border hover:shadow-xl transition"><img src="women.jpeg" class="w-full h-[160px] md:h-[220px] object-cover group-hover:scale-110 transition"><p class="text-center py-3 font-serif bg-white">WOMEN →</p></div>
+      <div onclick="showPage('new-arrivals')" class="cursor-pointer group overflow-hidden border hover:shadow-xl transition"><img src="newarr.jpeg" class="w-full h-[160px] md:h-[220px] object-cover group-hover:scale-110 transition"><p class="text-center py-3 font-serif bg-white">NEW ARRIVALS →</p></div>
+    </div>
+  </div>
+
+  <div class="px-5 md:px-12 pb-10 bg-[#FFF8F0]">
+    <h2 class="text-center text-[20px] tracking-[3px] font-serif">BEST SELLERS</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
+      <div onclick="showPage('product1')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="lawn1.jpeg" class="w-full h-[200px] object-cover group-hover:scale-105 transition"><p class="text-[13px] mt-2">Lawn Shirt - Ivory</p><p class="font-bold text-[#7A1E2E]">Rs 6,950</p></div>
+      <div onclick="showPage('product2')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="kurta.jpeg" class="w-full h-[200px] object-cover group-hover:scale-105 transition"><p class="text-[13px] mt-2">Men Kurta - White</p><p class="font-bold text-[#7A1E2E]">Rs 5,500</p></div>
+      <div onclick="showPage('product3')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="blue.jpeg" class="w-full h-[200px] object-cover group-hover:scale-105 transition"><p class="text-[13px] mt-2">Chikan Suit - blue</p><p class="font-bold text-[#7A1E2E]">Rs 8,200</p></div>
+      <div onclick="showPage('product4')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="kurta2.jpeg" class="w-full h-[200px] object-cover group-hover:scale-105 transition"><p class="text-[13px] mt-2">Kurta - Beige</p><p class="font-bold text-[#7A1E2E]">Rs 4,400</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SHOP - -->
+<section id="shop" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">SHOP - ALL PRODUCTS</h1><p class="text-[13px] text-[#C9A27E] mt-2">12 Premium Designs - Light, Elegant & Soft Lawn</p></div>
+  <div class="px-5 md:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="lawn1.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Embroidered Lawn - Ivory</p><p class="font-bold text-[#7A1E2E]">Rs 6,950</p><button onclick="event.stopPropagation(); addToCart('Embroidered lawn - Ivory', 6950,'lawn1.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="blue.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Chikan Lawn - Blue</p><p class="font-bold text-[#7A1E2E]">Rs 8,200</p><button onclick="event.stopPropagation(); addToCart('chikan lawn - blue', 8200,'blue.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="cream.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Printed Lawn - Cream</p><p class="font-bold text-[#7A1E2E]">Rs 5,900</p><button onclick="event.stopPropagation(); addToCart('printed lawn - cream', 5900,'cream.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="beige.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Embroidered Kurta - Beige</p><p class="font-bold text-[#7A1E2E]">Rs 7,400</p><button onclick="event.stopPropagation(); addToCart('Embroidered kurta - beige', 7400,'beige.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="pink.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Lawn 3 Piece - Pink</p><p class="font-bold text-[#7A1E2E]">Rs 7,900</p><button onclick="event.stopPropagation(); addToCart('Lawn 3 Piece - pink', 7900,'pink.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="green.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Festive Lawn - green</p><p class="font-bold text-[#7A1E2E]">Rs 9,500</p><button onclick="event.stopPropagation(); addToCart('Festive lawn - blue','9,500','green.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="levender.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Luxury Lawn - Lavender</p><p class="font-bold text-[#7A1E2E]">Rs 6,400</p><button onclick="event.stopPropagation(); addToCart('Luxury lawn - levender', 6400,'levender.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="gray.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Swiss Lawn - Gray</p><p class="font-bold text-[#7A1E2E]">Rs 7,200</p><button onclick="event.stopPropagation(); addToCart('Swiss lawn - gray', 7200,'gray.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="men.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">White</p><p class="font-bold text-[#7A1E2E]">Rs 5,500</p><button onclick="event.stopPropagation(); addToCart('white', 5500,'men.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="men2.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">blue</p><p class="font-bold text-[#7A1E2E]">Rs 6,100</p><button onclick="event.stopPropagation(); addToCart('blue', 6100,'men2.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="kurta.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Black</p><p class="font-bold text-[#7A1E2E]">Rs 6,800</p><button onclick="event.stopPropagation(); addToCart('Black', 6800,'kurta.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-4 cursor-pointer group hover:shadow-xl transition"><img src="kurta2.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-3">Beige</p><p class="font-bold text-[#7A1E2E]">Rs 7,600</p><button onclick="event.stopPropagation(); addToCart('beige', 7600,'kurta2.jpeg')" class="bg-[#2B1B12] text-white mx-4 mt-2 w-[calc(100%-2rem)] py-2 text-[12px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button></div>
+  </div>
+</section>
+
+<!-- 3. MEN -->
+<section id="men" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">MEN COLLECTION</h1><p class="text-[13px] text-[#C9A27E]">Premium Kurta & Shalwar Kameez</p></div>
+  <div class="px-5 md:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="men.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">Men Kurta - White</p><p class="font-bold text-[#7A1E2E]">Rs 5,500</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('white', 5500,'men.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation(); addToWish('white',5500,'men.jpeg')" class="border px-3 py-2">♡</button></div></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="men2.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">Men Kurta - Blue</p><p class="font-bold text-[#7A1E2E]">Rs 5,900</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('blue', 6100,'men2.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation(); addToWish('blue',6100,'men2.jpeg')" class="border px-3 py-2">♡</button></div></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="kurta.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">Shalwar Kameez - Black</p><p class="font-bold text-[#7A1E2E]">Rs 6,800</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('Black', 6800,'kurta.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation(); addToWish('Black',6800,'kurta.jpeg')" class="border px-3 py-2">♡</button></div></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="kurta2.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">Men Kurta - Beige</p><p class="font-bold text-[#7A1E2E]">Rs 6,200</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('beige', 7600,'kurta2.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation(); addToWish('beige',7600,'kurta2.jpeg')" class="border px-3 py-2">♡</button></div></div>
+  </div>
+</section>
+
+<!-- 4. WOMEN -->
+<section id="women" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">WOMEN COLLECTION</h1><p class="text-[13px] text-[#C9A27E]">Luxury Lawn - 8 Designs</p></div>
+  <div class="px-5 md:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="blue.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">chikan - blue</p><p class="font-bold text-[#7A1E2E]">Rs 6,950</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('chikan lawn - blue', 8200,'blue.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation(); addToWish('blue',6950, 'blue.jpeg')" class="border px-3 py-2">♡</button></div></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="women.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">white</p><p class="font-bold text-[#7A1E2E]">Rs 8,200</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('white', 8200,'women.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation(); addToWish('white',8200,'women.jpeg')" class="border px-3 py-2">♡</button></div></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="pink.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">Printed - pink</p><p class="font-bold text-[#7A1E2E]">Rs 5,900</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('Lawn 3 Piece - pink', 7900,'pink.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation('pink',5900,'pink.jpeg'); addToWish()" class="border px-3 py-2">♡</button></div></div>
+    <div onclick="showPage('product')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><img src="green.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">light-green</p><p class="font-bold text-[#7A1E2E]">Rs 7,400</p><div class="flex gap-2 px-3 mt-2"><button onclick="event.stopPropagation(); addToCart('Festive lawn - blue', 9500,'green.jpeg')" class="flex-1 bg-[#2B1B12] text-white py-2 text-[11px] hover:bg-[#C9A27E] hover:text-black">ADD TO CART</button><button onclick="event.stopPropagation('light-green',9500,'green.jpeg'); addToWish()" class="border px-3 py-2">♡</button></div></div>
+  </div>
+</section>
+
+<!-- 5. NEW ARRIVALS -->
+<section id="new-arrivals" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">NEW ARRIVALS</h1><p class="text-[13px] text-[#C9A27E]">Just Landed - Fresh Designs</p></div>
+  <div class="px-5 md:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div onclick="showPage('product1')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><span class="bg-[#7A1E2E] text-white text-[11px] px-2 py-1">NEW</span><img src="f1.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">Lawn - peach</p><p class="font-bold text-[#7A1E2E]">Rs 7,950</p></div>
+    <div onclick="showPage('product2')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><span class="bg-[#7A1E2E] text-white text-[11px] px-2 py-1">NEW</span><img src="f2.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">green</p><p class="font-bold text-[#7A1E2E]">Rs 8,200</p></div>
+    <div onclick="showPage('product3')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><span class="bg-[#7A1E2E] text-white text-[11px] px-2 py-1">NEW</span><img src="f3.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">Red</p><p class="font-bold text-[#7A1E2E]">Rs 5,500</p></div>
+    <div onclick="showPage('product4')" class="bg-white border text-center pb-3 cursor-pointer group hover:shadow-xl transition"><span class="bg-[#7A1E2E] text-white text-[11px] px-2 py-1">NEW</span><img src="f4.jpeg" class="w-full h-[220px] object-cover group-hover:scale-110 transition"><p class="text-[13px] mt-2">White</p><p class="font-bold text-[#7A1E2E]">Rs 7,400</p></div>
+  </div>
+</section>
+<section id="product1" class="hidden">
+  <div style="max-width:400px; margin:20px auto; text-align:center; background:white; padding:20px; border-radius:10px">
+    <img src="f1.jpeg" style="width:250px; border-radius:10px">
+    <h2>Lawn peach Dress</h2>
+    <h3>Rs 7,900</h3>
+    <p>★★★★★</p>
+    <button onclick="addToCart('peach',7900, 'f1.jpeg')" style="background:black; color:white; padding:12px; width:100%; border:none; border-radius:5px">ADD TO CART</button>
+    <br><br>
+    <button onclick="buyNow()" style="padding:12px; width:100%; border-radius:5px">BUY NOW</button>
+    <br><br>
+    <button onclick="showPage('home')">Back</button>
+  </div>
+</section>
+
+<section id="product2" class="hidden">
+  <div style="max-width:400px; margin:20px auto; text-align:center; background:white; padding:20px; border-radius:10px">
+    <img src="f2.jpeg" style="width:250px; border-radius:10px">
+    <h2>Green Chiffon Dress</h2>
+    <h3>Rs 8,200</h3>
+    <p>★★★★★</p>
+    <button onclick="addToCart('green Chiffon-dress',8200,'f2.jpeg')" style="background:black; color:white; padding:12px; width:100%; border:none; border-radius:5px">ADD TO CART</button>
+    <br><br>
+    <button onclick="buyNow()" style="padding:12px; width:100%; border-radius:5px">BUY NOW</button>
+    <br><br>
+    <button onclick="showPage('home')">Back</button>
+  </div>
+</section>
+
+  <section id="product3" class="hidden">
+  <div style="max-width:400px; margin:20px auto; text-align:center; background:white; padding:20px; border-radius:10px">
+    <img src="f3.jpeg" style="width:250px; border-radius:10px">
+    <h2>Red silk Dress</h2>
+    <h3>Rs 5,500</h3>
+    <p>★★★★★</p>
+    <button onclick="addToCart('Red silk dress', 5500, 'f3.jpeg')" style="background:black; color:white; padding:12px; width:100%; border:none; border-radius:5px">ADD TO CART</button>
+    <br><br>
+    <button onclick="buyNow()" style="padding:12px; width:100%; border-radius:5px">BUY NOW</button>
+    <br><br>
+    <button onclick="showPage('home')">Back</button>
+  </div>
+</section>
+
+<section id="product4" class="hidden">
+  <div style="max-width:400px; margin:20px auto; text-align:center; background:white; padding:20px; border-radius:10px">
+    <img src="f4.jpeg" style="width:250px; border-radius:10px">
+    <h2>white silk Dress</h2>
+    <h3>Rs 7,400</h3>
+    <p>★★★★★</p>
+    <button onclick="addToCart('white silk dress',7400,'f4.jpeg')" style="background:black; color:white; padding:12px; width:100%; border:none; border-radius:5px">ADD TO CART</button>
+    <br><br>
+    <button onclick="buyNow()" style="padding:12px; width:100%; border-radius:5px">BUY NOW</button>
+    <br><br>
+    <button onclick="showPage('home')">Back</button>
+  </div>
+</section>
+
+<!-- ABOUT PAGE -->
+<section id="about" class="hidden px-5 md:px-12 py-10 text-center">
+  <p class="text-[12px] tracking-[3px] text-[#C9A27E]">OUR STORY</p>
+  <h1 class="text-[32px] md:text-[42px] font-serif mt-2">ABOUT LIBAS</h1>
+
+  <p class="text-[14px] text-gray-600 leading-relaxed max-w-[700px] mx-auto mt-4">
+    LIBAS is a premium Pakistani fashion brand created for modern women
+    who love elegance, comfort and style. We believe that beautiful
+    clothes should not be expensive, they should be affordable for everyone.
+  </p>
+
+  <p class="text-[14px] text-gray-600 leading-relaxed max-w-[700px] mx-auto mt-3">
+    Our collections include Luxe Lawn, Embroidered Suits, Festive Edit
+    and Summer Essentials. Each design is carefully crafted with soft
+    fabric, fine embroidery and perfect finishing.
+  </p>
+
+  <p class="text-[14px] text-gray-600 leading-relaxed max-w-[700px] mx-auto mt-3">
+    Our mission is simple - to make every woman feel confident,
+    beautiful and special in every outfit she wears.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 text-left">
+    <div class="bg-white border p-5">
+      <h3 class="font-bold">✦ Premium Quality</h3>
+      <p class="text-[13px] text-gray-600 mt-2">Best fabric and fine embroidery that looks new every time you wear it.</p>
+    </div>
+    <div class="bg-white border p-5">
+      <h3 class="font-bold">✦ Affordable Price</h3>
+      <p class="text-[13px] text-gray-600 mt-2">Luxury look at a price that everyone can afford.</p>
+    </div>
+    <div class="bg-white border p-5">
+      <h3 class="font-bold">✦ Fast Delivery</h3>
+      <p class="text-[13px] text-gray-600 mt-2">Fast delivery all over Pakistan with easy return policy.</p>
+    </div>
+  </div>
+
+  <p class="text-[13px] tracking-[2px] mt-8">THANK YOU FOR CHOOSING LIBAS</p>
+</section>
+
+
+<!-- 6. COLLECTIONS -->
+<section id="collections" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">OUR COLLECTIONS</h1></div>
+  <div class="px-5 md:px-12 py-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div onclick="showPage('women collection')" class="bg-white border group hover:shadow-xl transition cursor-pointer"><img src="pic1jpeg.jpg" class="w-full h-[280px] object-cover group-hover:scale-105 transition"><div class="p-5 text-center bg-[#FFF8F0]"><p class="font-serif text-[20px]">WOMEN COLLECTION</p><p class="text-[13px] text-gray-500">24 dress</p></div></div>
+    <div onclick="showPage('men collection')" class="bg-white border group hover:shadow-xl transition cursor-pointer"><img src="pic2.jpeg" class="w-full h-[280px] object-cover group-hover:scale-105 transition"><div class="p-5 text-center bg-[#FFF8F0]"><p class="font-serif text-[20px]">MEN COLLECTION</p><p class="text-[13px] text-gray-500">18 dress</p></div></div>
+  </div>
+</section>
+
+<!-- WOMEN COLLCTION - 24 STYLES -->
+<section id="women collection" class="hidden md:px-12 py-8">
+  <button onclick="showPage('collections')">← Back</button>
+  <h1 class="text-[26px] font-serif text-center">WOMEN COLLCTION</h1>
+  <p class="text-center text-[12px] text-gray-500 mb-6">24 dress</p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="text-center"><img src="p1.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">purple 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,100</p><button onclick="addToCart('purple 3pc dress', 6100,'p1.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="p2.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">marjanda 3pc dress</p><p class="font-bold text-[13px]">Rs. 5,499</p><button onclick="addToCart('marjanda 3pc dress', 5499, 'p2.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="p3.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">maroon 3pc dress</p><p class="font-bold text-[13px]">Rs. 5,750</p><button onclick="addToCart('maroon 3pc dress', 5750, 'p3.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic4.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">Red 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,450</p><button onclick="addToCart('Red 3pc dress', 6450, 'pic4.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic5.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">purple 3pc dress</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('purple 3pc dress', 5999,'pic5.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic6.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">dark green 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,700</p><button onclick="addToCart('dark green 3pc dress', 6700, 'pic6.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic7g.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">light green 3pc dress</p><p class="font-bold text-[13px]">Rs. 7,200</p><button onclick="addToCart('light-green 3pc dress', 7200, 'pic7g.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic8b.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">black 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,100</p><button onclick="addToCart('black 3pc dress', 6100, 'pic8b.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic9by.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">butter yellow 3pc dress</p><p class="font-bold text-[13px]">Rs. 7,800</p><button onclick="addToCart('butter yellow 3pc dress', 7800, 'pic9by.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic10bl.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">blue 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,999</p><button onclick="addToCart('cream 3pc dress', 6999, 'pic10bl.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic11cr.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">cream 3pc dress</p><p class="font-bold text-[13px]">Rs. 5,900</p><button onclick="addToCart('zinc 3pc dress', 5900, 'pic11cr.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic12z.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">zinc 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,900</p><button onclick="addToCart('gray 3pc dress', 6900, 'pic12z.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic13gr.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">gray 3pc dress</p><p class="font-bold text-[13px]">Rs. 7,200</p><button onclick="addToCart('peach 3pc dress', 7200, 'pic13gr.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic14pe.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">peach 3pc dress</p><p class="font-bold text-[13px]">Rs. 8,100</p><button onclick="addToCart('levender 3pc dress', 8100, 'pic14pe.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic15l.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">levender 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,500</p><button onclick="addToCart('pista 3pc dress', 6500, 'pic15l.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic16pi.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">pista 3pc dress</p><p class="font-bold text-[13px]">Rs. 8,000</p><button onclick="addToCart('dark green 3pc dress', 8000, 'pic16pi.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic17gr.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">dark dreen 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,700</p><button onclick="addToCart('maroon 3pc dress', 6700, 'pic17gr.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic18r.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">maroon 3pc dress</p><p class="font-bold text-[13px]">Rs. 5,800</p><button onclick="addToCart('maroon 3pc dress', 5800, 'pic18r.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic19lp.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">light pink 3pc dress</p><p class="font-bold text-[13px]">Rs. 7,500</p><button onclick="addToCart('light Pink 3pc dress', 7500, 'pic19lp.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic20br.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">brown 3pc dress</p><p class="font-bold text-[13px]">Rs. 7,100</p><button onclick="addToCart('brown 3pc dress', 7100, 'pic20br.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic21db.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">brown 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,400</p><button onclick="addToCart('brown 3pc dress', 6400, 'pic21db.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic22m.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">mustered 3pc dress</p><p class="font-bold text-[13px]">Rs. 5,700</p><button onclick="addToCart('white 3pc dress', 5700, 'pic22m.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic23ow.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">white 3pc dress</p><p class="font-bold text-[13px]">Rs. 7,400</p><button onclick="addToCart('mustured 3pc dress', 7400, 'pic23ow.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="pic24bl.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">blue 3pc dress</p><p class="font-bold text-[13px]">Rs. 6,000</p><button onclick="addToCart('blue 3pc dress', 6000, 'pic24bl.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    
+  </div>
+</section>
+
+<!-- MEN COLLECTION - 18 STYLES -->
+<section id="men collection" class="hidden px-5 md:px-12 py-8">
+  <button onclick="showPage('collections')">← Back</button>
+  <h1 class="text-[26px] font-serif text-center">MEN COLLECTION</h1>
+  <p class="text-center text-[12px] text-gray-500 mb-6">18 dress</p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="text-center"><img src="m10og.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">olive green colour</p><p class="font-bold text-[13px]">Rs. 4,999</p><button onclick="addToCart('olive green colour', 4999,'m5zg.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m2mr.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">mehroon colour</p><p class="font-bold text-[13px]">Rs. 3,999</p><button onclick="addToCart('mehroon colour', 3999,'m4db.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m3lb.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">aqua colour</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('aqua colour', 5999,'m10og.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m4db.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">Royal blue colour</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('Royal blue colour', 5999,'m2mr.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m5zg.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">Sage green colour</p><p class="font-bold text-[13px]">Rs. 3,999</p><button onclick="addToCart('sage green colour', 3999,'m3lb.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m6zb.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">zinc colour</p><p class="font-bold text-[13px]">Rs. 4,999</p><button onclick="addToCart('zinc colour', 4999,'m6zb.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m7gr.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">gray colour</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('gray colour', 5999,'m7gr.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m8bl.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">black colour</p><p class="font-bold text-[13px]">Rs. 4,999</p><button onclick="addToCart('black colour', 4999,'m8bl.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m8dg.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">dark gray colour</p><p class="font-bold text-[13px]">Rs. 4,999</p><button onclick="addToCart('dark gray colour', 4999,'m8dg.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m10og.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">olive green colour</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('olive green colour', 5999,'m11dp.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m11dp.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">dusty pink colour</p><p class="font-bold text-[13px]">Rs. 3,999</p><button onclick="addToCart('dusty pink colour', 3999,'m12cr.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m12cr.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">cream colour</p><p class="font-bold text-[13px]">Rs. 3,999</p><button onclick="addToCart('cream colour', 3999,'m13ow.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m13ow.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">off white colour</p><p class="font-bold text-[13px]">Rs. 4,999</p><button onclick="addToCart('off white colour', 4999,'m14w.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m14w.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">white colour</p><p class="font-bold text-[13px]">Rs. 4,999</p><button onclick="addToCart('white colour', 4999,'p1.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m15aq.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">aqua colour</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('aqua colour', 5999,'p1.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m16sg.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">pista colour</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('pista colour', 5999,'p1.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m17pg.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">pista colour</p><p class="font-bold text-[13px]">Rs. 4,999</p><button onclick="addToCart('pista colour', 4999,'p1.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+    <div class="text-center"><img src="m18b.jpeg" class="w-full h-[280px] object-cover object-top"><p class="text-[13px] mt-2">black colour</p><p class="font-bold text-[13px]">Rs. 5,999</p><button onclick="addToCart('black colour', 5999,'p1.jpeg')" class="bg-black text-white text-[12px] px-4 py-2 mt-2">Add to Cart</button></div>
+  </div>
+</section>
+
+<!-- 7. PRODUCT -->
+<section id="product" class="hidden">
+  <div class="flex flex-col md:flex-row px-5 md:px-12 py-8 gap-8 bg-[#FFF8F0]">
+    <div class="md:w-1/2">
+      <div class="overflow-hidden border group"><img id="mainimg" src="lawn1.jpeg" class="w-full h-[420px] object-cover group-hover:scale-110 transition duration-500"></div>
+      <p class="text-[12px] mt-3 font-bold"></p>
+      <div class="flex gap-2 mt-2 flex-wrap">
+        <img onclick="changeImage(this.src)" src="lawn1.jpeg" class="w-[80px] h-[80px] object-cover border-2 border-[#C9A27E] cursor-pointer hover:opacity-70">
+        <img onclick="changeImage(this.src)" src="pink.jpeg" class="w-[80px] h-[80px] object-cover border cursor-pointer hover:opacity-70">
+        <img onclick="changeImage(this.src)" src="blue.jpeg" class="w-[80px] h-[80px] object-cover border cursor-pointer hover:opacity-70">
+        <img onclick="changeImage(this.src)" src="cream.jpeg" class="w-[80px] h-[80px] object-cover border cursor-pointer hover:opacity-70">
+      </div>
+    </div>
+    <div class="md:w-1/2">
+      <p class="text-[12px] tracking-[2px] text-[#7A1E2E] font-bold">LUXE LAWN 2026</p>
+      <h1 class="text-[28px] font-serif mt-2">Embroidered Lawn Shirt</h1>
+      <p class="text-[14px] text-gray-500">Ivory - 3 Piece Suit</p>
+      <p class="text-[#C9A27E] mt-2">★★★★★ <span class="text-[12px] text-gray-400">(120 Reviews)</span></p>
+      <p class="text-[24px] font-bold mt-3">Rs 6,950 <span class="text-[14px] text-gray-400 line-through font-normal">Rs 8,500</span></p>
+      <p class="text-[13px] text-gray-600 mt-3 bg-[#F7EDE3] p-3 border">100% Premium Cotton<br>Relaxed Fit - Easy Returns<br>Light & Breathable Fabric</p>
+      <p class="font-bold text-[13px] mt-4">SIZE:</p>
+      <div class="flex gap-2 mt-2"><button class="border bg-white px-4 py-2 text-[13px] hover:bg-black hover:text-white">S</button><button class="border px-4 py-2 text-[13px] bg-black text-white">M</button><button class="border bg-white px-4 py-2 text-[13px] hover:bg-black hover:text-white">L</button><button class="border bg-white px-4 py-2 text-[13px] hover:bg-black hover:text-white">XL</button></div>
+      <div class="flex gap-3 mt-6"><button onclick="addToCart(); showPage('cart')" class="flex-1 bg-[#2B1B12] text-white py-3 text-[14px] hover:bg-[#C9A27E] hover:text-black transition">ADD TO CART</button><button onclick="addToWish()" class="border bg-white px-4 py-3 text-[18px] hover:bg-[#F7EDE3]">♡</button></div>
+      <button onclick="showPage('checkout')" class="w-full border border-black bg-white py-3 mt-3 hover:bg-black hover:text-white transition">BUY NOW</button>
+    </div>
+  </div>
+</section>
+
+<!-- 8. WISHLIST -->
+<section id="wishlist" class="hidden">
+<div id="wishlist-items"></div>
+</section>
+  <!-- <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">MY WISHLIST</h1></div>
+  <div class="px-5 md:px-12 py-8 grid md:grid-cols-2 gap-4"> -->
+    <!--   -->
+    <!-- <div class="bg-white border text-center pb-4 group hover:shadow-xl transition"><img src="lawn1.jpeg" class="w-full h-[260px] object-cover group-hover:scale-105 transition"><p class="mt-3">Chikan - Rs 8,200</p><button onclick="addToCart(); showPage('cart')" class="bg-[#2B1B12] text-white px-6 py-2 mt-3 text-[12px] hover:bg-[#C9A27E] hover:text-black">MOVE TO CART</button></div>
+    <div class="bg-white border text-center pb-4 group hover:shadow-xl transition"><img src="blue.jpeg" class="w-full h-[260px] object-cover group-hover:scale-105 transition"><p class="mt-3">Chikan - Rs 8,200</p><button onclick="addToCart(); showPage('cart')" class="bg-[#2B1B12] text-white px-6 py-2 mt-3 text-[12px] hover:bg-[#C9A27E] hover:text-black">MOVE TO CART</button></div> -->
+  <!-- </div> -->
+
+
+ <!-- 9.cart -->
+<!-- <section id="cart" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">SHOPPING CART</h1></div>
+  <div class="px-5 md:px-12 py-8 max-w-[700px] mx-auto">
+    <div id="cartItems"></div>
+    
+   < <div class="bg-white border p-4 flex gap-4 items-center"><img src="lawn1.jpeg" class="w-[100px] h-[130px] object-cover"><div class="flex-1"><p class="font-bold">Embroidered Lawn - Ivory</p><p>Rs 6,950</p></div></div> -->
+    <!-- <div class="bg-white border p-4 mt-4 text-[14px] space-y-2"><div class="flex justify-between"><span>Subtotal</span><span id="cart-subtotal">0</span></div><div class="flex justify-between"><span>Delivery</span><span>Free</span></div><div class="flex justify-between font-bold border-t pt-2"><span>Total</span><span id="cart-total">0</span></div></div>
+    <button onclick="showPage('checkout')" class="w-full bg-[#2B1B12] text-white py-3 mt-4 hover:bg-[#C9A27E] hover:text-black transition">PROCEED TO CHECKOUT →</button>
+  </div>
+</section> --> 
+
+<!-- CART -->
+<section id="cart" class="hidden">
+  <div style="max-width:700px; margin:auto; padding:20px; min-height:400px;">
+    <h1 style="text-align:center;">SHOPPING CART</h1>
+
+    <div id="cartItems"></div>
+
+    <div style="border-top:1px solid #ccc; margin-top:15px; padding-top:10px;">
+      <p>Subtotal: <span id="cart-subtotal">Rs 0</span></p>
+      <p><b>Total: <span id="cart-total">Rs 0</span></b></p>
+    </div>
+
+    <button onclick="showPage('checkout')" style="width:100%; background:black; color:white; padding:12px; margin-top:10px;">PROCEED TO CHECKOUT</button>
+  </div>
+</section>
+
+<!-- 10. CHECKOUT -->
+<section id="checkout" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">CHECKOUT</h1></div>
+  <div class="px-5 py-8 max-w-[500px] mx-auto bg-white border p-6 space-y-3">
+    <input placeholder="Full Name" class="w-full border p-3 text-[14px] bg-[#FFF8F0] focus:outline-none focus:border-black">
+    <input placeholder="Phone Number" class="w-full border p-3 text-[14px] bg-[#FFF8F0] focus:outline-none focus:border-black">
+    <input placeholder="Deliver To - Address" class="w-full border p-3 text-[14px] bg-[#FFF8F0] focus:outline-none focus:border-black">
+    <div class="flex gap-2"><label class="border flex-1 p-3 text-[13px] text-center cursor-pointer hover:border-black bg-[#FFF8F0]"><input type="radio" name="pay" checked> Cash on Delivery</label><label class="border flex-1 p-3 text-[13px] text-center cursor-pointer hover:border-black bg-[#FFF8F0]"><input type="radio" name="pay"> Bank Transfer</label></div>
+    <button id="placeOrderBtn" onclick="showPage('confirm')" class="w-full bg-[#2B1B12] text-white py-3 hover:bg-[#C9A27E] hover:text-black transition">PLACE ORDER - Rs 6,950</button>
+  </div>
+</section>
+
+<!-- 11. ORDER CONFIRMED -->
+<section id="confirm" class="hidden">
+  <div class="text-center py-16 px-5 bg-[#FFF8F0]"><p class="text-[50px]">✅</p><h1 class="text-[28px] font-serif mt-3">Order Confirmed!</h1><p class="text-gray-600 mt-2">Arriving in 3-5 days - Free Shipping</p><button onclick="showPage('home')" class="bg-[#2B1B12] text-white px-8 py-3 mt-6 hover:bg-[#C9A27E] hover:text-black">CONTINUE SHOPPING</button></div>
+</section>
+
+<!-- 12. CONTACT -->
+<section id="contact" class="hidden">
+  <div class="text-center py-8 bg-[#2B1B12] text-white"><h1 class="text-[28px] font-serif tracking-[3px]">CONTACT US</h1></div>
+  <div class="px-5 py-8 max-w-[500px] mx-auto bg-white border p-6 space-y-3">
+    <input placeholder="Your Name" class="w-full border p-3 text-[14px] bg-[#FFF8F0]">
+    <input placeholder="Your Email" class="w-full border p-3 text-[14px] bg-[#FFF8F0]">
+    <textarea placeholder="Your Message" rows="4" class="w-full border p-3 text-[14px] bg-[#FFF8F0]"></textarea>
+    <button onclick="alert('Message Sent!'); showPage('home')" class="w-full bg-[#2B1B12] text-white py-3 hover:bg-[#C9A27E] hover:text-black transition">SEND MESSAGE</button>
+    <p class="text-center text-[13px] text-gray-500 pt-2"> Lahore, Pakistan | 0317-8875312 | hello@fatima.pk</p>
+  </div>
+</section>
+
+<div class="flex justify-center gap-2 my-6">
+  <button onclick="showPage('home')" class="w-9 h-9 rounded-full bg-black text-white">1</button>
+  <button onclick="showPage('shop')" class="w-9 h-9 rounded-full bg-[#E8DDCC]">2</button>
+  <button onclick="showPage('men')" class="w-9 h-9 rounded-full bg-[#E8DDCC]">3</button>
+  <button onclick="showPage('women')" class="w-9 h-9 rounded-full bg-[#E8DDCC]">4</button>
+  <button onclick="showPage('collections')" class="w-9 h-9 rounded-full bg-[#E8DDCC]">5</button>
+  <button onclick="showPage('about')" class="w-9 h-9 rounded-full bg-[#E8DDCC]">6</button>
+  <button onclick="showPage('cart')" class="w-9 h-9 rounded-full bg-[#E8DDCC]">7</button>
+  <button onclick="showPage('checkout')" class="w-9 h-9 rounded-full bg-[#E8DDCC]">8</button>
+</div>
+
+<!-- footer -->
+<div class="text-center py-5 bg-[#2B1B12] text-[#C9A27E] text-[12px]">© 2026 Libas - Premium Fashion Store | Made in Lahore</div>
+<script src="script.js"></script>
+</body>
+</html>
